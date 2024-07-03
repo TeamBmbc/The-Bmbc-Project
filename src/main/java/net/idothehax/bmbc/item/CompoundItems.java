@@ -12,7 +12,7 @@ public class CompoundItems {
 
     // All Generic Compounds
     // Solid
-    public static final Compound HYDROGEN_COMPOUND = new Compound(ElementItems.HYDROGEN);
+    public static final Compound HYDROGEN_COMPOUND = new Compound(ElementItems.HYDROGEN, "Reactive nonmetals", "Gas", 1.008, 1, 2.20,-259.1, -252.9, 72.8, 1312.0, 53, Double.NaN, Double.NaN,0.0899, 0.1805, 14300, "discovery_time_placeholder");
     public static final Compound HELIUM_COMPOUND = new Compound(ElementItems.HELIUM);
     public static final Compound LITHIUM_COMPOUND = new Compound(ElementItems.LITHIUM);
     public static final Compound BERYLLIUM_COMPOUND = new Compound(ElementItems.BERYLLIUM);

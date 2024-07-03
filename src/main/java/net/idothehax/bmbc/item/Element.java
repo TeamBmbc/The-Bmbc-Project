@@ -1,15 +1,4 @@
-package net.matty.bmbc.item;
-
-import net.matty.bmbc.element.Element;
-import net.matty.bmbc.element.ElementRegister;
-
-import java.util.List;
-
-public class Compound {
-    public static final Compound EMPTY = new Compound(ElementRegister.UNKNOWN);
-    private final List<Element> compoundElements;
-
-    private final List<Element> elements;
+public class Element extends Item {
     private final String series;
     private final String stateAtZeroC;
     private final double weight;
@@ -27,15 +16,11 @@ public class Compound {
     private final double specificHeat;
     private final String discoveryTime;
 
-    public List<Element> getElements() {
-        return compoundElements;
-    }
-
-    public Compound(Element element, String series, String stateAtZeroC, double weight, int energyLevels,
-                    double electronegativity, double meltingPoint, double boilingPoint, double electronAffinity,
-                    double ionizationEnergy, double radius, double hardness, double modulus, double density,
-                    double thermalConductivity, double specificHeat, String discoveryTime) {
-        this.elements = Collections.singletonList(element);
+    public Element(Properties properties, String series, String stateAtZeroC, double weight, int energyLevels,
+                   double electronegativity, double meltingPoint, double boilingPoint, double electronAffinity,
+                   double ionizationEnergy, double radius, double hardness, double modulus, double density,
+                   double thermalConductivity, double specificHeat, String discoveryTime) {
+        super(properties);
         this.series = series;
         this.stateAtZeroC = stateAtZeroC;
         this.weight = weight;
@@ -52,20 +37,9 @@ public class Compound {
         this.thermalConductivity = thermalConductivity;
         this.specificHeat = specificHeat;
         this.discoveryTime = discoveryTime;
-
-        /* do i need this?
-        if (elements.length>0) {
-            compoundElements = List.of(elements);
-        } else {
-            compoundElements = EMPTY.compoundElements;
-        }
-        */
     }
 
-    public List<Element> getElements() {
-        return elements;
-    }
-
+    // Getters for each property
     public String getSeries() { return series; }
     public String getStateAtZeroC() { return stateAtZeroC; }
     public double getWeight() { return weight; }
@@ -82,5 +56,4 @@ public class Compound {
     public double getThermalConductivity() { return thermalConductivity; }
     public double getSpecificHeat() { return specificHeat; }
     public String getDiscoveryTime() { return discoveryTime; }
-}
 }

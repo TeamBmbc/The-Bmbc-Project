@@ -14,7 +14,7 @@ public class CompoundItem extends Item {
     private static Map<Item, Compound> compatibleItems = new HashMap<>();
     private final Compound compound;
 
-    public CompoundItem(Properties pProperties, Element element){
+    public CompoundItem(Properties pProperties, Element element) {
         super(pProperties);
         this.compound = new Compound(element);
     }
@@ -45,6 +45,7 @@ public class CompoundItem extends Item {
         }).start();
         return super.onEntityItemUpdate(stack, entity);
     }
+
     public static List<Element> getCompoundElementsOf(Item item) {
         if (item instanceof CompoundItem compoundItem) {
             return compoundItem.getCompoundElements();

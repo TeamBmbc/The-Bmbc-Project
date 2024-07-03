@@ -47,4 +47,16 @@ public class ForgeEvents {
             }
         }
     }
+
+    @SubscribeEvent
+    public static void onItemPickup(PlayerEvent.ItemPickupEvent event) {
+        PlayerEntity player = event.getPlayer();
+        ItemStack stack = event.getStack();
+
+        if (stack.getItem() instanceof Element) {
+            Element element = (Element) stack.getItem();
+            // Replace with actual logic to save discovery time
+            player.sendMessage(new StringTextComponent("Discovered " + element.getName().getString() + " on day " + player.level.getGameTime()), player.getUUID());
+        }
+    }
 }
